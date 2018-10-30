@@ -17,7 +17,7 @@ xml.entry do
     xml.cdata!(" #{entry[:image_link]} ")
   end
   if entry[:additional_image_link]
-    entry[:additional_image_link].split(',').each do |link|
+    entry[:additional_image_link].each do |link|
       xml.tag! 'g:additional_image_link' do
         xml.cdata!(" #{link} ")
       end
