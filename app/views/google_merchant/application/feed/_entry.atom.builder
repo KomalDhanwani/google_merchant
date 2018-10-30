@@ -16,10 +16,14 @@ xml.entry do
   xml.tag! 'g:image_link' do
     xml.cdata!(" #{entry[:image_link]} ")
   end
-
-  xml.tag! 'g:additional_image_link' do
-    xml.cdata!(" #{entry[:additional_image_link]} ")
+  if entry[:additional_image_link]
+    entry[:additional_image_link].each do |link|
+      xml.tag! 'g:additional_image_link' do
+        xml.cdata!(" #{link} ")
+      end
+    end
   end
+
 
   xml.tag! 'g:condition', entry[:condition]
   xml.tag! 'g:availability', entry[:availability]
