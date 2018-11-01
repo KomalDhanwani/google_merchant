@@ -5,9 +5,10 @@ class CreateGoogleMerchantCategories < ActiveRecord::Migration
       t.integer :parent_id
       t.integer :left
       t.integer :right
+      t.integer :google_category_id
       t.timestamps
     end
-    
+
     add_index :google_merchant_categories, :parent_id
     add_index :google_merchant_categories, :left
     add_index :google_merchant_categories, :right
