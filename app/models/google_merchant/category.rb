@@ -60,7 +60,7 @@ module GoogleMerchant
           if category_creation_conditions
             parent = category_creation_conditions[:parent_model]
             category_name = category_creation_conditions[:category_name]
-            category_name_attr = { name: category_name, google_category_id: id}
+            category_name_attr = { name: category_name, google_category_id: id, google_path: line}
 
             # If cache contains category parent, create a child:
             if parent

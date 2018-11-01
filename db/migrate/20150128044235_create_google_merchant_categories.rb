@@ -6,6 +6,7 @@ class CreateGoogleMerchantCategories < ActiveRecord::Migration
       t.integer :left
       t.integer :right
       t.integer :google_category_id
+      t.string :google_path, limit: 300
       t.timestamps
     end
 
