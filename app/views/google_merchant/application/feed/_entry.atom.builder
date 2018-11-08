@@ -42,4 +42,9 @@ xml.entry do
       xml.cdata!(" #{product_type} ")
     end
   end
+
+  xml.tag! 'g:shipping' do
+    xml.tag! 'g:country', entry[:shipping][:country]
+    xml.tag! 'g:price', entry[:shipping][:price]
+  end
 end
