@@ -24,7 +24,8 @@ xml.entry do
     end
   end
 
-
+  xml.tag! 'g:age_group', entry[:age_group]
+  xml.tag! 'g:gender', entry[:gender]
   xml.tag! 'g:condition', entry[:condition]
   xml.tag! 'g:availability', entry[:availability]
   xml.tag! 'g:price', entry[:price]
@@ -46,5 +47,16 @@ xml.entry do
   xml.tag! 'g:shipping' do
     xml.tag! 'g:country', entry[:shipping][:country]
     xml.tag! 'g:price', entry[:shipping][:price]
+    xml.tag! 'g:region', entry[:shipping][:region]
+    xml.tag! 'g:service', entry[:shipping][:service]
   end
+
+  entry[:taxes].each do |tax|
+    xml.tag! 'g:tax' do
+      xml.tag! 'g:country', tax[:country]
+      xml.tag! 'g:rate', tax[:rate]
+    end
+  end
+
+
 end
