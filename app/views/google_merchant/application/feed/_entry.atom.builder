@@ -31,6 +31,12 @@ xml.entry do
   xml.tag! 'g:price', entry[:price]
   xml.tag! 'g:mpn', entry[:mpn]
   xml.tag! 'g:brand', entry[:brand]
+  xml.tag! 'g:color', entry[:color]
+  xml.tag! 'g:size', entry[:sizes]
+  xml.tag! 'g:size_type', entry[:size_type]
+  xml.tag! 'g:size_system', entry[:size_system]
+  xml.tag! 'g:material', entry[:material]
+  xml.tag! 'g:item_group_id', entry[:item_group_id]
 
   if entry[:google_product_category]
     xml.tag! 'g:google_product_category' do
